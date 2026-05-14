@@ -53,4 +53,4 @@ Script çalıştığında klasör içindeki şu gereksiz dosyaları otomatik ola
 Her türlü iyileştirme önerisine ve hata bildirimine açığız. Lütfen bir Pull Request göndermekten veya Issue açmaktan çekinmeyin.
 
 ---
-*Aesir Ekosistemi için özel olarak geliştirilmiştir.*
+*Aesir Ekosistemi için özel olarak geliştirilmiştir. by iandrexcb*
