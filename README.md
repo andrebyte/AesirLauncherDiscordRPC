@@ -1,40 +1,56 @@
 # 🛡️ Aesir Launcher — Discord Rich Presence (RPC)
 
-Aesir Launcher kullanıcıları için özel olarak hazırlanmış, sistem süreçlerini izleyerek çalışan dinamik bir Discord Rich Presence (Zengin Varlık Durumu) scripti. 
+Aesir Launcher ve Minecraft süreçlerini sistem üzerinden izleyerek Discord profilinizde dinamik olarak gösteren profesyonel bir RPC scriptidir. Bu araç, oyunun kodlarına müdahale etmeden dışarıdan çalışır.
 
-![Aesthetic](https://img.shields.io/badge/Aesthetics-Premium-blueviolet?style=for-the-badge)
 ![Python](https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python)
+![Discord](https://img.shields.io/badge/Discord-RPC-5865F2?style=for-the-badge&logo=discord)
 
-## ✨ Özellikler
+## 📋 Gereksinimler
 
-- 🔍 **Akıllı İzleme:** Launcher ve Minecraft süreçlerini otomatik algılar.
-- 🎮 **Dinamik Durum:** Ana menüdeyken "Menüde", oyuna girdiğinde "Oyunda" yazar.
-- 🚀 **Performans:** İşlemciyi yormayan (her 5sn'de bir kontrol) optimize döngü.
-- 🧹 **Oto-Temizlik:** Gereksiz geçici dosyaları ve kalıntıları otomatik süpürür.
-- 🛠️ **Hata Yönetimi:** Discord kapansa bile script çökmez, otomatik yeniden bağlanır.
+Scriptin çalışabilmesi için bilgisayarınızda şunların kurulu olması gerekir:
+- **Python 3.8 veya üzeri:** [python.org](https://www.python.org/downloads/) adresinden indirebilirsiniz. (Kurulum sırasında "Add Python to PATH" seçeneğini işaretlemeyi unutmayın!)
+- **Discord Masaüstü Uygulaması:** Web sürümü RPC desteklemez.
 
-## 🚀 Kurulum
+## 🚀 Kurulum ve Kullanım
 
-1. **Python Yükleyin:** Bilgisayarınızda [Python](https://www.python.org/) yüklü olduğundan emin olun.
-2. **Kütüphaneleri Kurun:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. **Konfigürasyon:** `aesir_watcher.py` dosyasını açın ve `CLIENT_ID` kısmına kendi Discord Developer ID'nizi yazın (veya varsayılanı kullanın).
+### 1. Dosyaları İndirin
+Bu depoyu indirin ve bir klasöre çıkartın.
 
-## 🎮 Kullanım
+### 2. Bağımlılıkları Yükleyin
+Klasörün içindeyken terminali (veya CMD) açın ve gerekli kütüphaneleri yükleyin:
+```bash
+pip install -r requirements.txt
+```
 
-Klasördeki **`Aesir_RPC_Baslat.bat`** dosyasına çift tıklamanız yeterli! Script arka planda çalışmaya başlayacak ve Discord profilinizi otomatik güncelleyecektir.
+### 3. Konfigürasyon (Opsiyonel)
+`aesir_watcher.py` dosyasını bir metin düzenleyici ile açarak en üstteki **⚙️ AYARLAR** bölümünden şu bilgileri güncelleyebilirsiniz:
+- `CLIENT_ID`: Kendi Discord Application ID'nizi kullanmak isterseniz.
+- `MC_VERSION`: Discord'da görünecek oyun sürümü.
+- `CHECK_INTERVAL`: Sistem kontrol sıklığı (varsayılan 5 saniye).
 
-## 📁 Dosya Yapısı
+### 4. Çalıştırma
+En kolay yöntem, klasördeki **`Aesir_RPC_Baslat.bat`** dosyasına çift tıklamaktır. 
+Alternatif olarak manuel başlatmak için:
+```bash
+python aesir_watcher.py
+```
 
-- `aesir_watcher.py`: Ana script dosyası.
-- `Aesir_RPC_Baslat.bat`: Windows için hızlı başlatıcı.
-- `requirements.txt`: Gerekli bağımlılıklar.
+## 🔍 Script Nasıl Çalışır?
 
-## 🤝 Katkıda Bulunma
+1. **İzleme:** Script her 5 saniyede bir sistemdeki aktif işlemleri kontrol eder.
+2. **Algılama:**
+   - Eğer `Aesir Launcher.exe` çalışıyorsa durumunuz: **"Ana Menüde Takılıyor"** olarak güncellenir.
+   - Eğer `java.exe` veya `javaw.exe` (Minecraft) çalışıyorsa durumunuz: **"Minecraft - Oyunda"** olarak güncellenir.
+3. **Öncelik:** Oyun açıkken launcher kapansa bile durumunuz "Oyunda" kalmaya devam eder.
+4. **Kapanış:** Hem launcher hem oyun kapandığında Discord durumunuz otomatik olarak temizlenir.
 
-Hataları bildirmek veya yeni özellikler eklemek isterseniz bir **Issue** açabilir veya **Pull Request** gönderebilirsiniz. Kankalara kapımız her zaman açık! 😎
+## 🧹 Temizlik Özelliği
+Script çalıştığında klasör içindeki şu gereksiz dosyaları otomatik olarak temizler:
+- `__pycache__` klasörleri
+- Eski deneme dosyaları (`find_my_process.py`, `launcher_example.py` vb.)
+
+## 🤝 Katkıda Bulunun
+Her türlü iyileştirme önerisine ve hata bildirimine açığız. Lütfen bir Pull Request göndermekten veya Issue açmaktan çekinmeyin.
 
 ---
-*Aesir Ekosistemi için sevgiyle hazırlandı.*
+*Aesir Ekosistemi için özel olarak geliştirilmiştir.*
