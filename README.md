@@ -29,11 +29,16 @@ pip install -r requirements.txt
 - `CHECK_INTERVAL`: Sistem kontrol sıklığı (varsayılan 5 saniye).
 
 ### 4. Çalıştırma
-En kolay yöntem, klasördeki **`Aesir_RPC_Baslat.bat`** dosyasına çift tıklamaktır. 
-Alternatif olarak manuel başlatmak için:
-```bash
-python aesir_watcher.py
-```
+Klasördeki **`Aesir_RPC_Baslat.bat`** dosyasına çift tıklamanız yeterlidir. 
+
+> [!NOTE]
+> **Görünmez Mod:** Başlatıcıyı çalıştırdığınızda herhangi bir siyah ekran (CMD) açılmaz. Script arka planda "Sessiz Mod"da çalışır ve siz oyuna girdiğinizde otomatik olarak devreye girer.
+
+### 5. Nasıl Kapatılır?
+Script arka planda çalıştığı için kapatmak istediğinizde şu adımları izleyin:
+1. **Görev Yöneticisi**'ni açın (`Ctrl + Shift + Esc`).
+2. **Ayrıntılar** sekmesine gidin.
+3. **`pythonw.exe`** işlemini bulun ve sağ tıklayıp **"Görevi Sonlandır"** seçeneğini seçin.
 
 ## 🔍 Script Nasıl Çalışır?
 
@@ -53,4 +58,6 @@ Script çalıştığında klasör içindeki şu gereksiz dosyaları otomatik ola
 Her türlü iyileştirme önerisine ve hata bildirimine açığız. Lütfen bir Pull Request göndermekten veya Issue açmaktan çekinmeyin.
 
 ---
-*Aesir Ekosistemi için özel olarak geliştirilmiştir. by iandrexcb*
+*Aesir Ekosistemi için özel olarak geliştirilmiştir.*
+
+*by @iandrexcb*
